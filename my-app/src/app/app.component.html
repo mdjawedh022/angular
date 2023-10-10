@@ -1,0 +1,11 @@
+<div class="conatiner">
+  <div class="main-container">
+
+    <h2>Counter app with angular</h2>
+  <p>counter: {{count}}</p>
+  <div class="btn-div">
+  <button [disabled]="count===0" (click)="counter('sub')">-</button>
+  <button (click)="counter('add')">+</button>
+  </div>
+  </div>
+</div>
