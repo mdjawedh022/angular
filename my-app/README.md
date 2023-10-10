@@ -8,6 +8,8 @@ https://angular-counter-app-23.netlify.app
 <br/>
 Tech stack
 <br/>
-1. Typscript 
+1. Typescript 
+<br/>
 2. Css
+<br/>
 3. html
