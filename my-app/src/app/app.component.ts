@@ -10,6 +10,10 @@ export class AppComponent {
   count=0;
   counter(type:string){
    type==='add'?this.count++:this.count--;
-   this.count===0
+   this.count===0;
+   
+  }
+  reset(){
+    this.count=0
   }
 }
