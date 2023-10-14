@@ -1,0 +1,50 @@
+<div class="nav-main">
+  <h1>E-comm</h1>
+  <div class="nav-search">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      class="input-s"
+      placeholder="search by name"
+    /><button (click)="onSearch()">search</button>
+  </div>
+  <div class="filter-nav">
+    <div>
+      <input
+        type="radio"
+        [(ngModel)]="selectedCategory"
+        value="Electronics"
+        (change)="onSelectCategory('Electronics')"
+      />Electronics
+    </div>
+    <div>
+      <input
+        type="radio"
+        [(ngModel)]="selectedCategory"
+        value="Clothing"
+        (change)="onSelectCategory('Clothing')"
+      />Clothing
+    </div>
+    <div>
+      <input
+        type="radio"
+        [(ngModel)]="selectedCategory"
+        value="Furniture"
+        (change)="onSelectCategory('Furniture')"
+      />Furniture
+    </div>
+  </div>
+</div>
+<div class="container">
+  <ul>
+    <li *ngFor="let item of results">
+      <!-- Use 'results' array to display filtered items -->
+      <div class="item">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p>Price: {{ item.price | currency }}</p>
+        <p>{{ item.category }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
