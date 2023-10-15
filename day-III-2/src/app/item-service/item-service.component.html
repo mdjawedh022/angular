@@ -1,62 +1,70 @@
 <nav class="nav">
-<h2>Angular-III</h2>
-<div class="nav-search">
-    <input
-      type="text"
-   
-      class="input-s"
-      placeholder="search by name"
-    /><button >search</button>
+  <h2>Angular-III</h2>
+  <div class="nav-search">
+    <input type="text" class="input-s" placeholder="search by name" /><button>
+      search
+    </button>
   </div>
+  <p>Total items displayed: {{ filteredItems.length }}</p>
 </nav>
 <div class="container">
-    <div class="sidebar">
-        <h3>Filtering category</h3>
-        <hr>
-        <!-- <div class="sidebar-radio">
-            <input
-              type="radio"
-              [(ngModel)]="selectedCategory"
-              value="Electronics"
-              (change)="onSelectCategory('Electronics')"
-            />Electronics
-          </div>
-          <div class="sidebar-radio">
-            <input
-              type="radio"
-              [(ngModel)]="selectedCategory"
-              value="Clothing"
-              (change)="onSelectCategory('Clothing')"
-            />Clothing
-          </div>
-          <div class="sidebar-radio">
-            <input
-              type="radio"
-              [(ngModel)]="selectedCategory"
-              value="Furniture"
-              (change)="onSelectCategory('Furniture')"
-            />Furniture
-          </div> -->
-          <div class="sidebar-radio"><input type="radio" name="" id=""> Electronics</div>
-          <div class="sidebar-radio"><input type="radio" name="" id=""> Electronics</div>
-          <div class="sidebar-radio"><input type="radio" name="" id=""> Electronics</div>
-
+  <div class="sidebar">
+    <h3>Filtering category</h3>
+    <hr />
+    <div class="sidebar-radio">
+      <input
+      type="radio"
+      name="category"
+      [(ngModel)]="selectedCategory"
+      (change)="onSelectCategory('All')"      />
+      All
     </div>
-    <div class="data-container">
-       
-        <div class="container-inner">
-            <ul>
-              <li *ngFor="let item of items">
-                <!-- Use 'results' array to display filtered items -->
-                <div class="item">
-                 <div class="img"> <img src={{item.img}} alt=""></div>
-                  <h3>{{ item.name }}</h3>
-                  <p>{{ item.description }}</p>
-                  <p>Price: {{ item.price | currency }}</p>
-                  <p>{{ item.category }}</p>
-                </div>
-              </li>
-            </ul>
-          </div>
+    <div class="sidebar-radio">
+      <input
+        type="radio"
+        name="category"
+        value="  Clothing"
+        [(ngModel)]="selectedCategory"
+        (change)="onSelectCategory('Clothing')"
+      />
+      Clothing
     </div>
+    <div class="sidebar-radio">
+      <input
+        type="radio"
+        name="category"
+        [(ngModel)]="selectedCategory"
+        value="Furniture"
+        (change)="onSelectCategory('Furniture')"
+      />
+      Furniture
+    </div>
+    <div class="sidebar-radio">
+      <input
+        type="radio"
+        name="category"
+        [(ngModel)]="selectedCategory"
+        value="Electronics"
+        (change)="onSelectCategory('Electronics')"
+      />
+      Electronics
+    </div>
+  </div>
+  <div class="data-container">
+    <div class="container-inner">
+      <ul>
+        <li *ngFor="let item of filteredItems">
+          <!-- Use 'results' array to display filtered items -->
+          <div class="item">
+            <div class="img"><img src="{{ item.img }}" alt="" /></div>
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <p>Price: {{ item.price | currency }}</p>
+            <p>Category: {{ item.category }}</p>
+            <button>Remove</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

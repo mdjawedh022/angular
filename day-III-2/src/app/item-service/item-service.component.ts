@@ -126,6 +126,13 @@ export class ItemServiceComponent {
       category: 'Electronics',
     },
     {
+      img:"https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhaXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      name: 'Chairs',
+     description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto maxime voluptates natus voluptatum laborum vel, corporis veniam sunt, placeat ipsum perspiciatis delectus eveniet, ab rem distinctio corrupti error minima laudantium!",
+      price: 200,
+      category: 'Furniture',
+    },
+    {
       img:"https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
       name: 'shirt',
      description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto maxime voluptates natus voluptatum laborum vel, corporis veniam sunt, placeat ipsum perspiciatis delectus eveniet, ab rem distinctio corrupti error minima laudantium!",
@@ -140,4 +147,33 @@ export class ItemServiceComponent {
       category: 'Furniture',
     },
   ];
+
+  selectedCategory:string='';
+
+  filteredItems:Array<{
+    img: string;
+    name: string;
+    description: string;
+    price: number;
+    category: string;
+  }>=[]
+
+  constructor() {
+    // Initialize the filteredItems array with all items initially
+    this.filteredItems = this.items;
+  }
+
+  onSelectCategory(category: string) {
+    // Update the selected category when a radio button is selected
+    this.selectedCategory = category;
+    if (this.selectedCategory === 'All') {
+      // If 'All' is selected, show all items
+      this.filteredItems = this.items;
+    } else if (this.selectedCategory === '') {
+      // If no category is selected, show all items
+      this.filteredItems = this.items;
+    } else {
+      this.filteredItems = this.items.filter((item) => item.category === this.selectedCategory);
+    }
+  }
 }
