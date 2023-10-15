@@ -166,9 +166,11 @@ export class ItemServiceComponent {
       category: 'Furniture',
     },
   ];
-
+  showDeleteConfirmationDialog = false;
+  itemToRemove: any;
   selectedCategory: string = '';
   searchItem: string = '';
+
   filteredItems: Array<{
     img: string;
     name: string;
@@ -180,6 +182,8 @@ export class ItemServiceComponent {
   constructor() {
     // Initialize the filteredItems array with all items initially
     this.filteredItems = this.items;
+    this.showDeleteConfirmationDialog = false;
+    this.itemToRemove = null;
   }
 
   onSelectCategory(category: string) {
@@ -204,9 +208,61 @@ export class ItemServiceComponent {
       this.filteredItems = this.items.filter((item) =>
         item.name.toLocaleLowerCase().includes(this.searchItem.toLowerCase())
       );
-    }else{
+    } else {
       //if the search item is empty , show all items based on the selected category
-      this.onSelectCategory(this.selectedCategory)
+      this.onSelectCategory(this.selectedCategory);
     }
+  }
+
+  // --------------------deleting------------------------
+  //   onRemoveItem(itemRemove:any){
+  // //Find the index of the item to remove in the filteredItems array
+  // const i=this.filteredItems.indexOf(itemRemove);
+  // if(i!==-1){
+  //   //Remove the item from filteredItems array
+  //   this.filteredItems.splice(i,1);
+  // }
+  // //if you want to remove the items array as well ,you can do the same
+  // const itemI=this.items.indexOf(itemRemove);
+  // if(itemI!==-1){
+  //   this.items.splice(itemI,1)
+  // }
+  //   }
+
+  onRemoveItem(itemToRemove: any) {
+    this.showDeleteConfirmationDialog = true;
+    this.itemToRemove = itemToRemove;
+  }
+  onDeleteConfirmed() {
+    // Close the confirmation dialog
+    this.showDeleteConfirmationDialog = false;
+
+    // Remove the item from the filteredItems array
+    const index = this.filteredItems.indexOf(this.itemToRemove);
+    if (index !== -1) {
+      this.filteredItems.splice(index, 1);
+    }
+
+    // If you want to remove it from the items array as well, you can do the same.
+  }
+
+  onCancelDelete() {
+    // Close the confirmation dialog without deleting
+    this.showDeleteConfirmationDialog = false;
+  }
+
+
+  sortItemsByPrice(ascending: boolean) {
+    // Use the sort() method to sort the items array by price
+    this.items.sort((a, b) => {
+      if (ascending) {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+  
+    // Update the filteredItems array based on the current page
+    this.filteredItems;
   }
 }

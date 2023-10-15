@@ -1,11 +1,14 @@
 <nav class="nav">
   <h2>Angular-III</h2>
   <div class="nav-search">
-    <input type="text" class="input-s" placeholder="search by name" [(ngModel)]="searchItem" /><button (click)="onSearch()">
-      search
-    </button>
+    <input
+      type="text"
+      class="input-s"
+      placeholder="search by name"
+      [(ngModel)]="searchItem"
+    /><button (click)="onSearch()">search</button>
   </div>
-  <p>Total items displayed: {{ filteredItems.length }}</p>
+  <p>Total items:{{ filteredItems.length }}</p>
 </nav>
 <div class="container">
   <div class="sidebar">
@@ -13,10 +16,11 @@
     <hr />
     <div class="sidebar-radio">
       <input
-      type="radio"
-      name="category"
-      [(ngModel)]="selectedCategory"
-      (change)="onSelectCategory('All')"      />
+        type="radio"
+        name="category"
+        [(ngModel)]="selectedCategory"
+        (change)="onSelectCategory('All')"
+      />
       All
     </div>
     <div class="sidebar-radio">
@@ -49,6 +53,18 @@
       />
       Electronics
     </div>
+    <br />
+    <hr />
+    <br />
+    <h3>Sorting by Price</h3>
+    <hr>
+   <div class="sidebar-btn">  <button (click)="sortItemsByPrice(true)" class="btn-sidebar">
+    Low to High
+   </button>
+   <button (click)="sortItemsByPrice(false)" class="btn-sidebar">
+    High to Low
+   </button></div>
+ 
   </div>
   <div class="data-container">
     <div class="container-inner">
@@ -61,10 +77,18 @@
             <p>{{ item.description }}</p>
             <p>Price: {{ item.price | currency }}</p>
             <p>Category: {{ item.category }}</p>
-            <button>Remove</button>
+            <button (click)="onRemoveItem(item)">Remove</button>
           </div>
         </li>
       </ul>
     </div>
+  </div>
+</div>
+<!-- Confirmation Dialog -->
+<div class="confirmation-dialog" *ngIf="showDeleteConfirmationDialog">
+  <div class="dialog-content">
+    <p>Are you sure you want to delete this item?</p>
+    <button (click)="onDeleteConfirmed()">Yes</button>
+    <button (click)="onCancelDelete()">No</button>
   </div>
 </div>
