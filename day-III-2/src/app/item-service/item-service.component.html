@@ -1,7 +1,7 @@
 <nav class="nav">
   <h2>Angular-III</h2>
   <div class="nav-search">
-    <input type="text" class="input-s" placeholder="search by name" /><button>
+    <input type="text" class="input-s" placeholder="search by name" [(ngModel)]="searchItem" /><button (click)="onSearch()">
       search
     </button>
   </div>
