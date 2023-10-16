@@ -1,0 +1,22 @@
+.container-main{
+    margin-top:7rem;
+    /* border: solid; */
+    width: 100%;
+    height: auto;
+
+}
+.inner-div{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,max-content));
+    gap: 30px;
+    padding: 3rem 0rem;
+    margin:auto;
+}
+.inner-div div{
+    box-shadow: blueviolet 0px 8px 10px;
+    padding: 2rem;
+    border-radius: 10px;
+
+
+}

@@ -1,0 +1,44 @@
+<div class="container">
+  <form class="form" (ngSubmit)="addItems()">
+    <h3>Add Item</h3>
+    <div class="group">
+      <label for="itemName">Item Name*</label>
+      <input
+        type="text"
+        placeholder=" enter item name..."
+        name="itemName"
+        [(ngModel)]="newItemName"
+        required
+      />
+        <!-- Display an error message if the 'newItemName' is empty -->
+      <div class="error-message" *ngIf="!newItemName && submitted">Item Name is required.</div>
+    </div>
+    <div class="group">
+      <label for="itemDescription">Description*</label>
+      <textarea
+      placeholder="enter description"
+        name="itemDescription"
+        [(ngModel)]="newItemDescription"
+        maxlength="100"
+        rows="5"
+      ></textarea>
+     <!-- Display an error message if the 'newItemDescription' is empty -->
+     <div class="error-message" *ngIf="!newItemDescription && submitted">Description is required.</div>
+     <!-- Display an error message if the 'newItemDescription' exceeds 100 characters -->
+     <div class="error-message" *ngIf="newItemDescription && newItemDescription.length > 100 && submitted">Description should be 100 characters or less.</div>
+    </div>
+    <div class="group">
+      <label for="itemPrice">Price*</label>
+      <input
+        type="text"
+        name="itemPrice"
+        placeholder="enter price.."
+        [(ngModel)]="newItemPrice"
+        required
+      />
+      <!-- Display an error message if the 'newItemPrice' is empty or not a number -->
+      <div class="error-message" *ngIf="(isNotANumber(newItemPrice) || newItemPrice <= 0) && submitted">Price is required and should be a valid number.</div>
+     </div>
+    <button type="submit" >Submit</button>
+  </form>
+</div>
