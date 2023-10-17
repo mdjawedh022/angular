@@ -18,7 +18,7 @@ export class ItemServiceComponent {
       name: 'Iphone 15',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto maxime voluptates natus voluptatum laborum vel, corporis veniam sunt, placeat ipsum perspiciatis delectus eveniet, ab rem distinctio corrupti error minima laudantium!',
-      price: 100,
+      price: 200,
       category: 'Electronics',
     },
     {
@@ -215,19 +215,7 @@ export class ItemServiceComponent {
   }
 
   // --------------------deleting------------------------
-  //   onRemoveItem(itemRemove:any){
-  // //Find the index of the item to remove in the filteredItems array
-  // const i=this.filteredItems.indexOf(itemRemove);
-  // if(i!==-1){
-  //   //Remove the item from filteredItems array
-  //   this.filteredItems.splice(i,1);
-  // }
-  // //if you want to remove the items array as well ,you can do the same
-  // const itemI=this.items.indexOf(itemRemove);
-  // if(itemI!==-1){
-  //   this.items.splice(itemI,1)
-  // }
-  //   }
+ 
 
   onRemoveItem(itemToRemove: any) {
     this.showDeleteConfirmationDialog = true;
@@ -251,7 +239,6 @@ export class ItemServiceComponent {
     this.showDeleteConfirmationDialog = false;
   }
 
-
   sortItemsByPrice(ascending: boolean) {
     // Use the sort() method to sort the items array by price
     this.items.sort((a, b) => {
@@ -261,7 +248,7 @@ export class ItemServiceComponent {
         return b.price - a.price;
       }
     });
-  
+
     // Update the filteredItems array based on the current page
     this.filteredItems;
   }
