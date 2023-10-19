@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { DataDisplayComponent } from './data-display/data-display.component';
 import { HeaderComponent } from './header/header.component';
-import { RouterModule } from '@angular/router';
+import { DisplayItemComponent } from './display-item/display-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent,
-    HeaderComponent
+    DataDisplayComponent,
+    HeaderComponent,
+    DisplayItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

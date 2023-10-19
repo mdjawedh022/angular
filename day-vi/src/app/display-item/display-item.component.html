@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="parent-card" *ngFor="let item of dataAppend">
+           <div class="img"><img src={{item.image}} alt=""></div> 
+           <div class="desc">
+            <h3>{{item.title}}</h3>
+           <h4>category:-{{item.category}}</h4>
+             <h5>{{item.price | currency}}</h5>   
+             <p>rating:-{{item.rating.rate}} count:-{{item.rating.count}}</p>
+             <button>Add to cart</button>
+        </div>
+    </div>
+</div>

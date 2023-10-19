@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "day-VI": {
+    "day-vi": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "day-VI:build:production"
+              "browserTarget": "day-vi:build:production"
             },
             "development": {
-              "browserTarget": "day-VI:build:development"
+              "browserTarget": "day-vi:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "day-VI:build"
+            "browserTarget": "day-vi:build"
           }
         },
         "test": {

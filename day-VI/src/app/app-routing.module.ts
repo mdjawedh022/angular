@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { DisplayItemComponent } from './display-item/display-item.component';
+import { DataDisplayComponent } from './data-display/data-display.component';
 
 const routes: Routes = [
   {
     path: '',
-    component:HomeComponent,
+    component:DisplayItemComponent,
   },
   {
-    path: 'app-about',
-    component:AboutComponent,
+    path: 'app-data-display',
+    component:DataDisplayComponent,
   },
 ];
 
