@@ -4,12 +4,12 @@ import { ItemService } from '../item.service';
 @Component({
   selector: 'app-item-display',
   templateUrl: './item-display.component.html',
-  styleUrls: ['./item-display.component.css']
+  styleUrls: ['./item-display.component.css'],
 })
 export class ItemDisplayComponent {
   items: Item[] = [];
 
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
     this.items = this.itemService.getItemsFromLocalStorage();
