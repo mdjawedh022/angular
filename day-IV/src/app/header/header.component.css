@@ -1,0 +1,28 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    color: #2d2b2b;
+    position: fixed;
+    width: 90%;
+    margin: auto;
+    left: 3%;
+    top: 5%;
+    border-radius: 40px;
+    padding: 1rem 3rem;
+}
+.nav h2{
+    font-size: 2rem;
+}
+.nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 1.2rem;
+}
+.nav ul a{
+    text-decoration: none;
+    color: #2a2828;
+}
