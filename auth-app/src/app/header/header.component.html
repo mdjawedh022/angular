@@ -1,0 +1,101 @@
+
+<nav class="nav">
+  <div class="nav-title">
+    <h1 *ngIf="menuType==='seller'|| menuType==='user'" >😊Welcome {{ sellerName | titlecase }}{{ userName | titlecase }} </h1>
+  </div>
+  <div class="navbar"  [ngSwitch]="menuType">
+    <a routerLink="/" class="logo-head">
+      <img src="assets/fashion.png" alt="Myntra Logo"
+    /></a>
+
+    <!-- <div > -->
+    <ul *ngSwitchCase="'default'" class="nav-link menu-link">
+      <li><a routerLink="men">Men</a></li>
+      <li><a routerLink="women">Women</a></li>
+      <li><a routerLink="kids">Kids</a></li>
+    </ul>
+    <ul *ngSwitchCase="'user'" class="nav-link">
+      <li><a routerLink="men">Men</a></li>
+      <li><a routerLink="women">Women</a></li>
+      <li><a routerLink="kids">Kids</a></li>
+    </ul>
+    <ul *ngSwitchCase="'default'" class="nav-link">
+      <li (click)="toggleMobileMenu()">
+        <a><i class="fa-solid fa-magnifying-glass"></i></a>
+      </li>
+      <li>
+        <a routerLink="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+      </li>
+      <li class="menu-link"><a routerLink="seller"><i class="fa-solid fa-lock"></i></a></li>
+      <li class="menu-link">
+        <a routerLink="user"
+          ><i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+      </li>
+      <li  (click)="toggleMenu()"class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+      </li>
+    </ul>
+
+    <ul *ngSwitchCase="'seller'" class="nav-link">
+      <li><a routerLink="">Add Product</a></li>
+      <li><a routerLink="">Product List</a></li>
+      <li><a (click)="logOut()">Logout</a></li>
+    </ul>
+
+    <ul *ngSwitchCase="'user'" class="nav-link">
+      <li (click)="toggleMobileMenu()">
+        <a><i class="fa-solid fa-magnifying-glass"></i></a>
+      </li>
+       <li>
+        <a routerLink="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+      </li>
+      <li class="hamburger">
+        <a href=""><i class="fa-solid fa-bars"></i></a>
+      </li>
+      <li>
+        <a class="user" (click)="logOut()"><i class="fa-solid fa-user"></i></a>
+      </li>
+    </ul>
+    <!-- </div> -->
+  </div>
+</nav>
+<div class="nav-search" *ngIf="isMobileMenuVisible">
+  <div class="inner-toggle">
+    <h2 class="close" (click)="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></h2>
+
+    <div class="input-div">
+      <input type="text" placeholder="search for products" />
+      <ul *ngIf="searchResults" class="search-results">
+        <li *ngFor="let item of searchResults">
+          <a></a>
+        </li>
+      </ul>
+      <button>Search</button>
+    </div>
+  </div>
+</div>
+
+<!-- -------sidebar--------------------- -->
+<div class="toggle" *ngIf="isHamburger">
+  <div class="inner-toggle1">
+    <div class="header-sidebar">
+      <div class="logo">
+        <img src="assets/fashion.png" alt="Myntra Logo" />
+      </div>
+      <h3  (click)="toggleMenu()">X</h3>
+    </div>
+    <ul class="link-menu1">
+      <li><a href="#">Men</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">Kids</a></li>
+      <li>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i>  </a>
+
+      </li>
+      <li>
+        <a href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+      </li>
+    </ul>
+  </div>
+</div>

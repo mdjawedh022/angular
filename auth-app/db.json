@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "name": "jawed",
+      "email": "jawedhilmand022@gmail.com",
+      "password": "AAAA",
+      "id": 1
+    },
+    {
+      "name": "jawed",
+      "email": "jawedhilmand022@gmail.com",
+      "password": "1111",
+      "id": 2
+    },
+    {
+      "name": "jawed",
+      "email": "jawedhilmand022@gmail.com",
+      "password": "2222",
+      "id": 3
+    },
+    {
+      "name": "Afrida",
+      "email": "jawedh024@gmail.com",
+      "password": "1212",
+      "id": 4
+    },
+    {
+      "name": "jawed",
+      "email": "eve.holt@reqres.in",
+      "password": "ssss",
+      "id": 5
+    },
+    {
+      "name": "jawed",
+      "email": "jawedhilmand022@gmail.com",
+      "password": "1111",
+      "id": 6
+    },
+    {
+      "name": "jawed",
+      "email": "jawedh024@gmail.com",
+      "password": "5555",
+      "id": 7
+    },
+    {
+      "name": "jawed",
+      "email": "eve.holt@reqres.in",
+      "password": "qqqq",
+      "id": 8
+    }
+  ],
+  "seller": [
+    {
+      "name": "jawed",
+      "email": "jawedhilmand022@gmail.com",
+      "password": "AAAA",
+      "id": 1
+    },
+    {
+      "name": "Afrida",
+      "email": "eve.holt@reqres.in",
+      "password": "aaaa",
+      "id": 2
+    },
+    {
+      "name": "jawed",
+      "email": "jawedhilmand022@gmail.com",
+      "password": "1212",
+      "id": 3
+    },
+    {
+      "name": "jawed",
+      "email": "eve.holt@reqres.in",
+      "password": "3434",
+      "id": 4
+    }
+  ]
+}
